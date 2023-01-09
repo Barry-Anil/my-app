@@ -19,6 +19,14 @@ if (!MONGODB_URI) {
  * in development. This prevents connections growing exponentially
  * during API Route usage.
  */
+
+declare global {
+  interface Window {
+    mongoose: any;
+  }
+}
+
+
 let cached = global.mongoose;
 
 if (!cached) {
